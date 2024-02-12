@@ -17,3 +17,4 @@ o window é o pai de todos
 por isso eu não preciso ficar colocando window.alert
 window.prompt
 ect;
+

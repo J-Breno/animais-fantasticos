@@ -13,7 +13,24 @@ if (
 
 const h1Selecionado = document.querySelector("h1");
 
-h1Selecionado.style.color = "red";
-
 const bodySelectionado = document.querySelector("body");
 console.log(bodySelectionado);
+
+h1Selecionado.style.cursor = "pointer";
+
+console.log(h1Selecionado.classList);
+
+const h1Classes = h1Selecionado.classList;
+console.log(h1Classes);
+
+h1Selecionado.addEventListener("click", trocaCorH1);
+
+function trocaCorH1() {
+  if (h1Selecionado.classList.contains("azul")) {
+    h1Selecionado.classList.remove("azul");
+    h1Selecionado.style.color = "black";
+  } else {
+    h1Selecionado.classList.add("azul");
+    h1Selecionado.style.color = "blue";
+  }
+}
