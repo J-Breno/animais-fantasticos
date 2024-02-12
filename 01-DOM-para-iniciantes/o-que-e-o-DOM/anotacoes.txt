@@ -10,3 +10,10 @@ window.innerHeight; retorna a altura do browser
 
 Ao inspecionar com Chrome, você está vendo a representação oficial do DOM.
 
+uma propriedade ela não é executada ela apenas retorna um valor
+
+o window é o pai de todos
+
+por isso eu não preciso ficar colocando window.alert
+window.prompt
+ect;
