@@ -1,0 +1,12 @@
+Document Object Model(DOM)
+
+É uma interface que representa documentos html e xml através de objetos. Com ela é possível manipular a estrutura, estilos e conteúdo destes documentos.
+
+console.log(window);
+window é objeto global do browser
+possui diferentes métodos e propriedades
+
+window.innerHeight; retorna a altura do browser
+
+Ao inspecionar com Chrome, você está vendo a representação oficial do DOM.
+
