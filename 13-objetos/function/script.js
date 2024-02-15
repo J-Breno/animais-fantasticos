@@ -1,16 +1,96 @@
-// toda função é criada com o construtor function e por isso herda as suas propriedades e métodos
-// legth retorna o total de parâmetros
-// o call puramente ele executa uma função, o primeiro parâmetro é o this, o resto é os parâmetros
-// o this dentro de uma função é o window, o this você vai podr qual é o this dessa função, nesse call, eu já posso passar um objeto feito, ou eu posso criar um proprio objeto nele, normalmente você vai criar um objeto antes
-// esse call é para todas as funcôes, forEach, map, as que eu crio etc
-// a diferença do call para o apply é que o call não precisa pegar seus valores separados, ele pega por um array
-
-function descricaoCarro(velocidade) {
-    console.log(this);
-    console.log(this.marca + ' ' + this.ano, ' ' + velocidade);
-}
-descricaoCarro.call({marca: 'Hilux', ano: 2025}, 1000);
-
-const numeros = [32, 423, 1,34,59, 32,];
-
-console.log(Math.max.apply(null, numeros))
+function initTabNav() {
+    // navegação por tab
+    // sempre isole os seus códigos Javascript em funções
+    const tabMenu = document.querySelectorAll(".js-tabmenu li");
+    const tabContent = document.querySelectorAll(".js-tabcontent section");
+  
+    if (tabMenu.length && tabContent.length) {
+      tabContent[0].classList.add("ativo");
+  
+      function activeTab(index) {
+        tabContent.forEach((section) => {
+          section.classList.remove("ativo");
+        });
+        tabContent[index].classList.add("ativo");
+      }
+  
+      tabMenu.forEach((itemMenu, index) => {
+        itemMenu.addEventListener("click", () => {
+          activeTab(index);
+        });
+      });
+    }
+  }
+  initTabNav();
+  
+  function initAccordion() {
+    const accordionList = document.querySelectorAll(".js-accordion dt");
+    const activeClass = "ativo";
+  
+    if (accordionList.length) {
+      accordionList[0].classList.add(activeClass);
+      accordionList[0].nextElementSibling.classList.add(activeClass);
+      function activeAccordion() {
+        // console.log(event.currentTarget); // vai pegar exatamento o elemento que eu estou selecionando
+        // console.log(this); // mesma coisa do anterior
+        this.classList.toggle(activeClass);
+        this.nextElementSibling.classList.toggle(activeClass);
+      }
+  
+      accordionList.forEach((item) => {
+        item.addEventListener("click", activeAccordion);
+      });
+    }
+  }
+  initAccordion();
+  
+  function initScrollSuave() {
+    const linkInterno = document.querySelectorAll('.js-menu a[href^="#"]');
+  
+    if (linkInterno.length) {
+      function scrollToSection(event) {
+        event.preventDefault();
+        const href = event.currentTarget.getAttribute("href");
+        const section = document.querySelector(href);
+        section.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+  
+      linkInterno.forEach((item) => {
+        item.addEventListener("click", scrollToSection);
+      });
+    }
+  }
+  initScrollSuave();
+  
+  /*
+  //Forma alternativa scroll suave
+  const topSection = section.offsetTop;
+  window.scrollTo(
+    {
+      top: topSection,
+        behavior: "smooth"
+      }
+      );
+      */
+  function initAnimacaoScroll() {
+    const sections = document.querySelectorAll(".js-scroll");
+    const windowMetade = window.innerHeight * 0.6;
+  
+    if (sections.length) {
+      function animaScroll() {
+        sections.forEach((section) => {
+          const sectionTop = section.getBoundingClientRect().top;
+          const isSectionVisible = sectionTop - windowMetade < 0;
+          if (isSectionVisible) section.classList.add("ativo");
+          else section.classList.remove("ativo");
+        });
+      }
+      animaScroll();
+  
+      window.addEventListener("scroll", animaScroll);
+    }
+  }
+  initAnimacaoScroll();
