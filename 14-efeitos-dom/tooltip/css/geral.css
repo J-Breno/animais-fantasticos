@@ -327,3 +327,15 @@ dt {
   transition: 0.5s;
   transform: translate3d(0, 0, 0);
 }
+
+.dados a {
+  color: #e54;
+  cursor: pointer;
+}
+
+.dados a:hover {
+  color:rgb(135, 21, 8)
+}
+.dados a:active {
+  color: #f00;
+}
