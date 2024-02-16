@@ -1,0 +1,15 @@
+.tooltip {
+  position: absolute;
+  z-index: 500;
+  background: rgba(0, 0, 0, .6);
+  box-shadow: 0 0 0 2px #fb5, 0 0 0 6px rgba(0, 0, 0, .6);
+  padding: .5rem;
+  color: white;
+  font-family: monospace;
+  font-weight: bold;
+  font-size: .875rem;
+  max-width: 180px;
+  border-radius: 2px;
+  /* agora eu tenho que colocar ele mo posicionamento dele  em relação a página, e eu posso fazer isso com o pageX, pageY, no JavaScript*/
+  
+}
