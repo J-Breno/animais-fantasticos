@@ -2,7 +2,7 @@
 
 // O poder das promisses está no método then() do seu protótip. O Callback deste método só será ativado quando a promisse for resolvida. O argumento do callback será o valor passado na função resolve. se resolveu a promessa o then ativa
 
-// As promessas não fazem sentido quando o código executado dentro da mesma é apenas código ssicrono. O poder está na execução de código assícrono que executará o resolve() ao fim dele.
+// As promessas não fazem sentido quando o código executado dentro da mesma é apenas código sicrono. O poder está na execução de código assícrono que executará o resolve() ao fim dele.
 
 // O método then retorna outra promise. Podemos colocar then() após then() e fazer um encadeamento de promessas. O valor do primeiro argumento de cada then, será o valor do retorno anterior. será sempre o valor retornado
 
